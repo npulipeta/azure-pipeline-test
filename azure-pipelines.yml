@@ -20,8 +20,8 @@ jobs:
     continueOnError: false
     inputs:
       targetType: inline
-      script: echo Airflow Task is succesfull
-      #script: exit 1
+      #script: echo Airflow Task is succesfull
+      script: exit 1
 
   - task: PythonScript@0
     displayName: TestScriptTask
