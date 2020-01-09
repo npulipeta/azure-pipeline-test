@@ -17,7 +17,7 @@ jobs:
 
   - task: Bash@3
     displayName: AirflowTask
-    continueOnError: false
+    continueOnError: true
     inputs:
       targetType: inline
       #script: echo Airflow Task is succesfull
