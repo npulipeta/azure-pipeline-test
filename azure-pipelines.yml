@@ -13,9 +13,15 @@ jobs:
 - job: AirflowTask
 
   steps:
-  - script: exit 1
+  - script: echo Airflow Task is succesfull
+  #- script: exit 1
 
 - job: TestScript
   dependsOn: AirflowTask
   condition: succeeded() # this job will only run if AirflowTask is Succesfull
+
+  steps:
+  - script: echo Intialsing python script
+  - script: python startup.py
+  - script: echo Done with python script
 
