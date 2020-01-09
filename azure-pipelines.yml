@@ -10,13 +10,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 jobs:
-- job: Foo
+- job: AirflowTask
 
   steps:
   - script: echo Hello!
-    condition: always() # this step will always run, even if the pipeline is canceled
 
-- job: Bar
-  dependsOn: Foo
-  condition: failed() # this job will only run if Foo fails
+- job: TestScript
+  dependsOn: AirflowTask
+  condition: succeeded() # this job will only run if AirflowTask is Succesfull
 
