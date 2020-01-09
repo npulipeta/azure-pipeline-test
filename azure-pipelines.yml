@@ -16,12 +16,7 @@ jobs:
   - script: echo Airflow Task is succesfull
   #- script: exit 1
 
-- job: TestScript
-  dependsOn: AirflowTask
-  condition: succeeded() # this job will only run if AirflowTask is Succesfull
-
-  steps:
-  - script: echo Intialsing python script
-  - script: python azure-script-test.py
-  - script: echo Done with python script
-
+  - task: PythonScript@0
+    inputs:
+      scriptSource: 'filePath'
+      scriptPath: azure-script-test.py
