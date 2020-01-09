@@ -18,6 +18,7 @@ jobs:
 
   - task: Bash@3
     inputs:
+      targetType: inline
       script: echo task 1 bash
 
   - task: PythonScript@0
