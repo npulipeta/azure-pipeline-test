@@ -10,18 +10,21 @@ pool:
   vmImage: 'ubuntu-latest'
 
 jobs:
-- job: AirflowTask
+- job: AirflowPipeline
 
   steps:
-  - script: echo Airflow Task is succesfull
-  #- script: exit 1
+  - script: echo Intialising Airflow Pipeline Tasks
 
   - task: Bash@3
+    displayName: AirflowTask
+    continueOnError: false
     inputs:
       targetType: inline
-      script: echo task 1 bash
+      script: echo Airflow Task is succesfull
+      #script: exit 1
 
   - task: PythonScript@0
+    displayName: TestScriptTask
     inputs:
       scriptSource: 'filePath'
       scriptPath: azure-script-test.py
