@@ -13,7 +13,7 @@ jobs:
 - job: AirflowTask
 
   steps:
-  - script: echo Hello!
+  - script: exit 1
 
 - job: TestScript
   dependsOn: AirflowTask
