@@ -16,6 +16,10 @@ jobs:
   - script: echo Airflow Task is succesfull
   #- script: exit 1
 
+  - task: Bash@3
+    inputs:
+      script: echo task 1 bash
+
   - task: PythonScript@0
     inputs:
       scriptSource: 'filePath'
